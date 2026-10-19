@@ -295,28 +295,28 @@ const HeroSection = memo(({ shouldReduce }) => {
           <motion.a
             href={`${import.meta.env.BASE_URL}master-tracker.apk`}
             download="Master-Tracker.apk"
-            className="group relative inline-flex items-center justify-center gap-4 overflow-hidden rounded-full bg-slate-800 px-8 py-5 font-bold text-white shadow-lg text-base sm:text-lg"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gray-800 px-6 py-3 sm:px-8 sm:py-4 font-bold text-white shadow-lg text-sm sm:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span className="absolute bottom-0 left-0 mb-9 ml-9 h-48 w-48 -translate-x-full translate-y-full rotate-[-40deg] rounded-full bg-white/10 transition-all duration-500 ease-in-out group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-            <span className="relative">Download Master Tracker</span>
-            <span className="relative rounded-sm bg-red-500 px-1 py-1 text-[10px] font-extrabold leading-none text-slate-900 transition-transform duration-300 group-hover:scale-110">
-              NEW
+            <span className="absolute top-0 right-0 overflow-hidden w-16 h-16 pointer-events-none">
+              <span className="absolute top-[10px] -right-[22px] w-20 bg-red-500 text-white text-[9px] font-extrabold text-center py-0.5 rotate-45 shadow">NEW</span>
             </span>
+            <span className="relative">Download Master Tracker</span>
           </motion.a>
-        </motion.div>
 
-        <motion.div className="flex gap-5 justify-center items-center py-10">
-          <a
+          <motion.a
             href="https://associatonofcomputerapplications.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gray-800 px-6 py-3 sm:px-8 sm:py-4 font-bold text-white shadow-lg text-sm sm:text-base"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <motion.button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gray-800 px-6 py-3 sm:px-8 sm:py-4 font-bold text-white shadow-lg text-sm sm:text-base">
-              ACA Website
-            </motion.button>
-          </a>
+            <span className="absolute bottom-0 left-0 mb-9 ml-9 h-48 w-48 -translate-x-full translate-y-full rotate-[-40deg] rounded-full bg-white/10 transition-all duration-500 ease-in-out group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+            <span className="relative">ACA Website</span>
+          </motion.a>
         </motion.div>
       </div>
     </motion.header>

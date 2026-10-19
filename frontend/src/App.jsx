@@ -95,6 +95,8 @@ function App() {
             <Route path="profile" element={<Profile />} />
         </Route>
         
+        <Route path="test" element={<Student />} />
+
         <Route path="*" element={<DefaultLayout />}>
             <Route index element={<NotFound />} />
         </Route>
