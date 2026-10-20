@@ -16,7 +16,8 @@ const UpdateUserModal = ({ user, isOpen, onClose, onSave }) => {
         firstName: user.firstName || '',
         lastName: user.lastName || '',
         email: user.email || '',
-        role: user.role || ''
+        role: user.role || '',
+        phoneNumber: user.phoneNumber || ''
       });
     }
   }, [user]);
@@ -82,6 +83,8 @@ const UpdateUserModal = ({ user, isOpen, onClose, onSave }) => {
             >
               <option value="student">Student</option>
               <option value="senior">Senior</option>
+              <option value="alumni">Alumni</option>
+              <option value="admin">Admin</option>
             </select>
           </div>
           
