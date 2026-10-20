@@ -94,7 +94,7 @@ function App() {
             <Route path="post" element={<CreateAlumniPost />} />
             <Route path="profile" element={<Profile />} />
         </Route>
-        
+
         <Route path="*" element={<DefaultLayout />}>
             <Route index element={<NotFound />} />
         </Route>

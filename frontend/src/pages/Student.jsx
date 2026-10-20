@@ -64,6 +64,14 @@ const useTodaysTopic = () => {
 // --- DATA & CONFIGURATION ---
 const useDashboardFeatures = () => useMemo(() => [
     { 
+      id: 'attendancetracker', 
+      title: 'Attendance Tracker', 
+      description: 'Track attendance and record internal and semester marks.',
+      imageUrl: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=800&auto=format&fit=crop',
+      buttonText: 'Download Master Tracker',
+      isNew: true,
+    },
+    { 
       id: 'resources', 
       title: 'Academic Resources', 
       description: 'A vast library of notes and e-books.',
@@ -137,11 +145,13 @@ const itemVariants = {
 const FeatureCard = ({ feature }) => {
   const navigate = useNavigate();
     const handleRedirect = () => {
-        if(feature.id === 'leavetracker'){
-            navigate(`/student/${feature.id}`);
+        if (feature.id === 'attendancetracker') {
+            const link = document.createElement('a');
+            link.href = '/master-tracker.apk';
+            link.download = 'master-tracker.apk';
+            link.click();
             return;
-        }       
-        // console.log(`Redirecting to ${feature.id}...`);
+        }
         navigate(`/student/${feature.id}`);
     };
 
@@ -151,13 +161,18 @@ const FeatureCard = ({ feature }) => {
             className="relative group rounded-2xl overflow-hidden h-full shadow-lg"
             style={{ minHeight: '250px' }}
         >
+            {feature.isNew && (
+                <span className="absolute top-3 right-3 z-10 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow">
+                    New
+                </span>
+            )}
             <img
                 src={feature.imageUrl}
                 alt={feature.title}
                 className="absolute bg-[#000000b7] inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                 onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x400/ef4444/ffffff?text=Error'; }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t   to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
             <div className="relative h-full flex flex-col justify-end p-3 sm:p-4 lg:p-6 text-white">
                 <h3 className="font-space font-bold text-lg sm:text-xl lg:text-2xl">
                     {feature.title} 
